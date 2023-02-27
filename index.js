@@ -58,48 +58,49 @@ topMenuEl.append(a)
 // appendChild() allows you to append one set of nodes
   console.log(a);
 });
-// // 4.0 ==================================================
-// const subMenuEl = document.getElementById('sub-menu')
+// 4.0 ==================================================
+const subMenuEl = document.getElementById('sub-menu')
 
-// // 4.1
-// subMenuEl.style.height = '100%'
+// 4.1
+subMenuEl.style.height = '100%'
 
-// // 4.2
-// subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
+// 4.2
+subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
 
-// // 4.3
-// subMenuEl.classList.add('flex-around')
+// 4.3
+subMenuEl.classList.add('flex-around')
 
-// // 4.4
-// subMenuEl.style.position = 'absolute'
+// 4.4
+subMenuEl.style.position = 'absolute'
 
-// // 4.5
-// subMenuEl.style.top = '0'
+// 4.5
+subMenuEl.style.top = '0'
 
-// // 5.0
-// // 5.1
-// const topMenuLinks = topMenuEl.getElementsByTagName("a");
-// let showingSubMenu = false;
+// 5.0
+// 5.1
+const topMenuLinks = topMenuEl.getElementsByTagName("a");
+let showingSubMenu = false;
 
-// // 5.2
-// topMenuEl.addEventListener('click', function(event){
-// event.preventDefault();
-// // console.log(event.target.tagName);
+// 5.2
+topMenuEl.addEventListener('click', function(event){
+event.preventDefault();
+console.log(event.target.tagName);
 
 
-// if(event.target !=='A'){
-//   return
-// }
-// })
-// // 5.3
-// if (event.target.classList.contains('active')){
+if(event.target.toLowerCase() !=='a'){
+  console.log('no a');
+  return
+}
+})
+// 5.3
+event.target.classList.add('active');
+if (event.target.classList.contains('active')){
 
-//   console.log(event.target);
-//   event.target.classList.remove('active');
+  console.log(event.target);
+  event.target.classList.remove('active');
 
-//   showingSubMenu=false
-
-//   console.dir(event.target);
-//   subMenuEl.style.top='0';
-//   return
-// }
+  showingSubMenu=false
+  
+  subMenuEl.style.top='0';
+  return
+}
